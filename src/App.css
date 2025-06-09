@@ -1,0 +1,82 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #f0f0f0; /* Fondo gris más similar al de Mercado Libre */
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f0f0f0; /* Fondo general */
+}
+
+.content-container {
+  flex: 1;
+  padding: 16px;
+  background-color: #f0f0f0; /* Fondo de contenido */
+}
+
+.footer-container {
+  background-color: #f0f0f0; /* Mismo fondo para integración sutil */
+  padding: 16px;
+  text-align: center;
+  border-top: 1px solid #ddd;
+  color: #777;
+  font-size: 0.875rem;
+}
+
+.footer-container .footer-link {
+  color: #777;
+  transition: color 0.3s;
+}
+
+.footer-container .footer-link:hover {
+  color: #E1306C; /* Color Instagram */
+}
+
+.footer-container .footer-text {
+  color: #888;
+  font-size: 0.75rem;
+  margin-top: 4px;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

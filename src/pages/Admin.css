@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+
+.admin-container {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #ebebeb; /* Fondo suave como Mercado Libre */
+  min-height: 100vh;
+  padding-bottom: 40px;
+}
+
+.descripcion-truncada {
+  max-width: 200px; /* Ajusta el ancho como prefieras */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.container {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    font-weight: 600;
+    color: #495057;
+  }
+  
+  .table-container {
+    overflow-x: auto;
+  }
+  
+  .table {
+    margin-top: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .head-add-edit {
+    background-color: #343a40; 
+    color: #ffffff; 
+    font-weight: 500;
+    text-transform: uppercase;
+    border-bottom: 1px solid #dee2e6;
+  }
+  
+  .table th {
+    background-color: #343a40;
+    color: #ffffff;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+  
+  .table td {
+    vertical-align: middle;
+  }
+  
+  .img-fluid {
+    object-fit: cover;
+    height: 80px;
+    width: 80px;
+    border-radius: 8px;
+    transition: transform 0.3s;
+  }
+  
+  .img-fluid:hover {
+    transform: scale(1.05);
+  }
+  
+  .button-group button {
+    margin-right: 5px;
+  }
+
+  .buscador-contenedor {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+  
+  @media (min-width: 768px) {
+    .buscador-contenedor {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .buscador-input {
+      max-width: 300px;
+    }
+  }
+  
+  .head-add-edit {
+    background-color: #198754;
+    color: white;
+    font-weight: bold;
+  }
+  

@@ -1,0 +1,12 @@
+@media (max-width: 767px) {
+    .navbar-collapse {
+      display: flex;
+      justify-content: flex-end;
+    }
+  
+    .navbar-collapse .nav {
+      flex-direction: row;
+      gap: 10px; /* Espacio entre botones */
+    }
+  }
+  

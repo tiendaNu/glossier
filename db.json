@@ -1,0 +1,25 @@
+{
+  "productos": [
+    {
+      "nombre": "cartera",
+      "precio": 800,
+      "imagen": "https://tropea.com.ar/pub/media/catalog/product/cache/d1bd8443ca10f2cb00000164c0513360/1/e/1e973579cf4459999e313044ad474dc5_e301022u60ne_2.jpg",
+      "agotado": true,
+      "id": "6a91"
+    },
+    {
+      "nombre": "cartera 2",
+      "precio": 300,
+      "imagen": "https://tropea.com.ar/pub/media/catalog/product/cache/d1bd8443ca10f2cb00000164c0513360/1/e/1e973579cf4459999e313044ad474dc5_e301022u60ne_2.jpg",
+      "agotado": false,
+      "id": "eb3f"
+    },
+    {
+      "nombre": "skate",
+      "precio": 52,
+      "imagen": "https://www.labskateboarding.com/wp-content/uploads/2018/10/SKATE-SKATE-NIQUEL-PERSPECTIVA.jpg",
+      "agotado": false,
+      "id": "789a"
+    }
+  ]
+}

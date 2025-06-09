@@ -1,0 +1,394 @@
+/* Fuente Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+
+.custom-container { 
+  max-width: 1140px; 
+  margin-left: auto; 
+  margin-right: auto; 
+  font-family: 'Montserrat', sans-serif;
+}
+
+.image-container {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+  overflow: hidden;
+  border-radius: 8px 8px 0 0;
+  transition: transform 0.3s ease;
+}
+
+.producto-card {
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 10px;
+}
+
+.filtros-card {
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.1);
+  padding: 10px;
+  background-color: white;
+}
+
+.producto-card:hover, .filtros-card:hover {
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.15);
+  transform: translateY(-4px);
+}
+
+.product-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.card-body {
+  padding: 16px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-title {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #333333;
+  margin-bottom: 6px;
+  text-transform: none;
+  min-height: 36px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  letter-spacing: 0.02em;
+  line-height: 1.25;
+}
+
+.producto-descripcion {
+  font-size: 0.8rem !important;
+  font-weight: 300 !important;
+  color: #676767 !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  line-clamp: 3;
+  margin-bottom: 10px;
+  line-height: 1.4;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.card-text {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #222222;
+  margin-bottom: 12px;
+}
+
+.badge {
+  font-weight: 700;
+  padding: 0.4em 0.7em;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  user-select: none;
+  width: fit-content;
+}
+
+.badge.bg-success {
+  background-color: #00a650 !important;
+  color: white !important;
+}
+
+.badge.bg-danger {
+  background-color: #ff3a29 !important;
+  color: white !important;
+}
+
+.buttonFilters {
+  background-color: #F7A8B8;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.instagram-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  transition: font-size 0.3s ease;
+  font-size: 3rem;
+  color: #E1306C;
+}
+
+@media (min-width: 768px) {
+  .instagram-icon {
+    font-size: 5rem;
+    bottom: 40px;
+    right: 50px;
+  }
+}
+
+/* --- RADIO BUTTON PERSONALIZADO --- */
+
+/* Oculta el radio nativo */
+input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  box-shadow: none;
+  transition: border-color 0.3s ease;
+}
+
+input[type="radio"] {
+  /* Borde rosa */
+  border: 2px solid #F7A8B8;
+  background-color: #F7A8B8; /* Fondo rosa */
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  box-shadow: none;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Cuando está seleccionado, el borde y fondo siguen rosas */
+input[type="radio"]:checked {
+  border-color: #F7A8B8;
+  background-color: #F7A8B8;
+}
+
+/* El círculo interior puede ser un poco más oscuro o del mismo tono */
+input[type="radio"]:checked::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #995869; /* un rosa más fuerte o igual */
+}
+
+/* Elimina el borde azul del foco */
+input[type="radio"]:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: #F7A8B8; /* para dar feedback visual de foco */
+}
+
+.productos-banner {
+  background-color: #F7A8B8;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.productos-banner-text {
+  color: white;
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+/* Contenedor del modal para controlar layout */
+/* Modal content */
+.modal-content {
+  border-radius: 12px;
+  font-family: 'Montserrat', sans-serif;
+  color: #4a2c2a;
+}
+
+/* Contenedor principal del modal */
+.modal-producto-container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: nowrap;
+  min-height: 450px;
+}
+
+/* Contenedor de la imagen */
+.modal-imagen-container {
+  flex: 1.2;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Imagen grande y centrada */
+.modal-product-image {
+  max-width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(247, 168, 184, 0.5);
+}
+
+.btn-anterior,
+.btn-siguiente {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(247, 168, 184, 0.85);
+  border: none;
+  color: white;
+  font-weight: 700;
+  font-size: 1.4rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  user-select: none;
+  box-shadow: 0 0 10px rgba(247, 168, 184, 0.7);
+
+  display: flex;           /* nuevo */
+  justify-content: center; /* nuevo */
+  align-items: center;     /* nuevo */
+}
+
+.btn-anterior:hover,
+.btn-siguiente:hover {
+  background-color: #f58ea3;
+}
+
+.btn-comprar{
+  background-color: #F7A8B8;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.btn-comprar:hover {
+  background-color: #f58ea3;
+}
+
+.btn-anterior {
+  left: 5px;
+}
+
+.btn-siguiente {
+  right: 5px;
+}
+
+/* Contenedor de detalles (precio, descripción) */
+.modal-detalle-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  padding: 0 0.5rem;
+  color: #4a2c2a;
+}
+
+/* Título precio destacado */
+.modal-detalle-container h4 {
+  font-weight: 600;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #e94a73;
+}
+
+/* Header modal con fondo rosa #F7A8B8 */
+.modal-header {
+  background-color: #F7A8B8 !important;
+  border-bottom: none;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: #4a2c2a;
+  justify-content: center;
+  text-align: center;
+}
+
+.modal-descripcion {
+  font-size: 1rem;
+  color: #676767;
+  margin-top: 1rem;
+  line-height: 1.5;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  line-clamp: 6;
+  -webkit-box-orient: vertical;
+  max-height: 9em; /* Ajusta según el número de líneas y line-height */
+  word-break: break-word;
+}
+
+/* Responsive para móviles */
+@media (max-width: 767.98px) {
+  .modal-producto-container {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .modal-imagen-container,
+  .modal-detalle-container {
+    flex: none;
+    width: 100%;
+    padding: 0;
+  }
+
+  .btn-anterior,
+  .btn-siguiente {
+    top: auto;
+    bottom: 10px;
+    transform: none;
+    background-color: rgba(247, 168, 184, 0.95);
+    width: 35px;
+    height: 35px;
+  }
+
+  .btn-anterior {
+    left: 20px;
+  }
+
+  .btn-siguiente {
+    right: 20px;
+  }
+
+  .modal-detalle-container h4 {
+    font-size: 1.6rem;
+    margin-top: 1rem;
+    color: #e94a73;
+  }
+
+  .modal-header {
+    font-size: 1.4rem;
+  }
+}
+
+
