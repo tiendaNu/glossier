@@ -88,7 +88,7 @@ function Productos() {
 
   // Función para armar el enlace de WhatsApp con mensaje personalizado
   const getWhatsappLink = (producto) => {
-    const numero = "5493884216529";
+    const numero = "5493885801230";
     const nombre = producto?.nombre || "";
     const categoria = producto?.categoria || "";
     const descripcion = producto?.descripcion || "";
