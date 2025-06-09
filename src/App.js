@@ -1,12 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AppNavbar from "./components/Navbar";
-import Footer from "./components/Footer"; // Importación del Footer
-import Login from "./pages/Login";
+import Footer from "./components/Footer";
 import Admin from "./pages/Admin";
 import Productos from "./pages/Productos";
 import ProtectedRoute from "./components/ProtectedRoute";
-import "./App.css"; // Nuevo CSS para el fondo
+import "./App.css";
 
 function App() {
   return (
@@ -16,7 +15,6 @@ function App() {
         <div className="content-container">
           <Routes>
             <Route path="/" element={<Productos />} />
-            <Route path="/login" element={<Login />} />
             <Route
               path="/admin"
               element={
@@ -27,7 +25,7 @@ function App() {
             />
           </Routes>
         </div>
-        <Footer /> {/* Footer agregado aquí */}
+        <Footer />
       </div>
     </Router>
   );

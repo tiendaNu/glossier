@@ -1,32 +1,19 @@
 import React, { useState } from "react";
 import { Navbar, Nav, Button } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
-import { useAuth } from "../context/ContextoAutenticacion"; // ajustá la ruta si hace falta
-import logo from "../assets/logo.png"; // ajustá la ruta según tu estructura
-
+import { Link } from "react-router-dom";
+import { useAuth0 } from "@auth0/auth0-react";
+import logo from "../assets/logo.png";
 
 function AppNavbar() {
-  const { user, logout } = useAuth();
-  const navigate = useNavigate();
+  const { loginWithRedirect, logout, isAuthenticated } = useAuth0();
   const [isOpen, setIsOpen] = useState(false);
 
-  const handleToggle = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const handleLogout = async () => {
-    try {
-      await logout();
-      navigate("/login");
-      setIsOpen(false); // Cerrar el menú al hacer logout
-    } catch (error) {
-      console.error("Error al cerrar sesión:", error);
-    }
-  };
-
-  const handleLinkClick = () => {
+  const handleToggle = () => setIsOpen(!isOpen);
+  const handleLogout = () => {
+    logout({ returnTo: window.location.origin });
     setIsOpen(false);
   };
+  const handleLinkClick = () => setIsOpen(false);
 
   const detalleColor = "#F7A8B8";
 
@@ -58,7 +45,24 @@ function AppNavbar() {
         className="justify-content-end"
       >
         <Nav className="align-items-center ms-auto gap-2">
-          {user ? (
+          <Nav.Link as={Link} to="/" onClick={handleLinkClick}>
+            <Button
+              variant="outline-light"
+              style={{ borderColor: detalleColor, color: detalleColor }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = detalleColor;
+                e.currentTarget.style.color = "#000";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = "transparent";
+                e.currentTarget.style.color = detalleColor;
+              }}
+            >
+              Inicio
+            </Button>
+          </Nav.Link>
+
+          {isAuthenticated ? (
             <>
               <Nav.Link as={Link} to="/admin" onClick={handleLinkClick}>
                 <Button
@@ -93,22 +97,21 @@ function AppNavbar() {
               </Button>
             </>
           ) : (
-            <Nav.Link as={Link} to="/login" onClick={handleLinkClick}>
-              <Button
-                variant="outline-light"
-                style={{ borderColor: detalleColor, color: detalleColor }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = detalleColor;
-                  e.currentTarget.style.color = "#000";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = "transparent";
-                  e.currentTarget.style.color = detalleColor;
-                }}
-              >
-                Login
-              </Button>
-            </Nav.Link>
+            <Button
+              variant="outline-light"
+              onClick={() => loginWithRedirect()}
+              style={{ borderColor: detalleColor, color: detalleColor }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = detalleColor;
+                e.currentTarget.style.color = "#000";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = "transparent";
+                e.currentTarget.style.color = detalleColor;
+              }}
+            >
+              Login
+            </Button>
           )}
         </Nav>
       </Navbar.Collapse>

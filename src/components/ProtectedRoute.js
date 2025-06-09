@@ -1,19 +1,13 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
-import { useAuth } from "../context/ContextoAutenticacion";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const ProtectedRoute = ({ children }) => {
-  const { user, loading } = useAuth();
+  const { isAuthenticated, isLoading } = useAuth0();
 
-  if (loading) {
-    return <div>Cargando...</div>;
-  }
+  if (isLoading) return <div>Cargando...</div>;
 
-  if (!user) {
-    return <Navigate to="/login" />;
-  }
-
-  return children;
+  return isAuthenticated ? children : <Navigate to="/" />;
 };
 
 export default ProtectedRoute;
